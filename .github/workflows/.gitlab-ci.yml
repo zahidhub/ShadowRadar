@@ -6,4 +6,4 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Build on Arduino CLI
-        run: bash /.github/workflows/build-arduino.sh
+        run: bash /workflows/build-arduino.sh
