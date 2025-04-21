@@ -1,0 +1,17 @@
+name: build #stage name
+on: #action to be triggered
+  push:
+  create:
+  release:
+    types: [published]
+
+
+jobs: #define jobs
+  build:
+    runs-on: ubuntu-latest #github runner tag
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+
+      - name: Build on Arduino CLI
+        run: bash .github/workflows/build-arduino.sh #run the build file
