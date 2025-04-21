@@ -7,6 +7,6 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v2
-        
+
       - name: Build on Arduino CLI
-        run: bash .github/workflows/.gitlab-ci.yml
+        run: bash .github/workflows/build-arduino.sh
