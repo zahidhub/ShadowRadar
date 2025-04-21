@@ -25,8 +25,7 @@ arduino-cli core install arduino:avr
 # Link Arduino library
 ln -s $GITHUB_WORKSPACE $HOME/Arduino/libraries/CI_Test_Library
 
-# Compile all *.ino files for the Arduino Uno
-for f in src/Radar.ino ; do
-    arduino-cli compile -b arduino:avr:uno src/Radar.ino
-done
+# Compile .ino file for the Arduino Uno
+arduino-cli compile --fqbn arduino:avr:uno /srcRadar
+
 
