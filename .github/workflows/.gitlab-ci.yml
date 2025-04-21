@@ -1,7 +1,10 @@
 name: build #stage name
-on: [push, create] #action to be triggered
+on: #action to be triggered
+  push:
+  create:
   release:
     types: [published]
+
 
 jobs: #define jobs
   build:
