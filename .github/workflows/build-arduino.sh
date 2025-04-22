@@ -1,3 +1,9 @@
+#The file is used for downloading dependencies and libraries
+#during the pipeline proccess
+
+#inspiration: https://medium.com/swlh/how-to-create-an-automated-build-pipeline-for-your-arduino-project-1df9826f2a5e
+
+
 #!/bin/bash
 
 # Exit immediately if a command exits with a non-zero status.
