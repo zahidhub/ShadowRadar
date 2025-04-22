@@ -1,3 +1,8 @@
+#This file is used to command the pipeline. It holds stages
+#which have spacific jobs. 
+
+#inspiration: https://medium.com/swlh/how-to-create-an-automated-build-pipeline-for-your-arduino-project-1df9826f2a5e
+
 name: build #stage name
 on: #action to be triggered
   push:
