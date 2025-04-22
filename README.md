@@ -2,7 +2,7 @@
 
 The ShawdowRadar, helps with object detection at pointed direction. It uses pulse to detect the location of the object and provides you with the specific location of the object.
 
-#### Status:
+#### Status: [![pipeline](https://github.com/zahidhub/ShadowRadar/actions/workflows/.gitlab-ci.yml/badge.svg)](https://github.com/zahidhub/ShadowRadar/actions/workflows/.gitlab-ci.yml)
 ---
 
 ## Features
