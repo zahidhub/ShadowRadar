@@ -7,8 +7,8 @@ MODE=$1
 if [ "$MODE" == "build-only" ]; then
   # Run build logic
   cd $GITHUB_WORKSPACE
-  mkdir $HOME/Arduino
-  mkdir $HOME/Arduino/libraries
+  mkdir -p $HOME/Arduino
+  mkdir -p $HOME/Arduino/libraries
   export PATH=$PATH:$GITHUB_WORKSPACE/bin
   curl -fsSL https://raw.githubusercontent.com/arduino/arduino-cli/master/install.sh | sh
   arduino-cli config init
@@ -41,8 +41,8 @@ shopt -s globstar
 cd $GITHUB_WORKSPACE
 
 # Create directories
-mkdir $HOME/Arduino
-mkdir $HOME/Arduino/libraries
+mkdir -p $HOME/Arduino
+mkdir -p $HOME/Arduino/libraries
 
 # Install Arduino IDE
 export PATH=$PATH:$GITHUB_WORKSPACE/bin
