@@ -12,6 +12,7 @@ on: #action to be triggered
 
 
 jobs: #define jobs
+  
   build:
     runs-on: ubuntu-latest #github runner tag
     steps:
@@ -20,11 +21,16 @@ jobs: #define jobs
 
       - name: Build on Arduino CLI
         run: bash .github/workflows/build-arduino.sh #run the build file
+  
   test:
     runs-on: ubuntu-latest
     needs: build
     steps:
       - name: Checkout
         uses: actions/checkout@v2
+
+      - name: Clone AUniter
+        run: git clone https://github.com/bxparks/AUniter.git external/AUniter
+
       - name: Run unit tests on Arduino CLI
         run: bash .github/workflows/build-arduino.sh test-only
