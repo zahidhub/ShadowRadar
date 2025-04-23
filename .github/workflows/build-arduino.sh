@@ -31,8 +31,12 @@ arduino-cli core install arduino:avr
 # Link Arduino library
 ln -s $GITHUB_WORKSPACE $HOME/Arduino/libraries/CI_Test_Library
 
-# Compile all *.ino files for the Arduino Uno
+# Compile *.ino files for the Arduino Uno
 mkdir Radar
 mv src/Radar.ino Radar/Radar.ino
 arduino-cli compile --fqbn arduino:avr:uno Radar
 
+# Compile unit tests
+mkdir test_dir
+mv tests/test_distance_conversion.ino test_dir/test_distance_conversion.ino
+arduino-cli compile --fqbn arduino:avr:uno test_dir

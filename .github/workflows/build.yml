@@ -20,3 +20,11 @@ jobs: #define jobs
 
       - name: Build on Arduino CLI
         run: bash .github/workflows/build-arduino.sh #run the build file
+  test:
+    runs-on: ubuntu-latest
+    needs: build
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+      - name: Run unit tests on Arduino CLI
+        run: bash .github/workflows/build-arduino.sh test-only
