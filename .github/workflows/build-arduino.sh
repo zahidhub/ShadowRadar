@@ -43,3 +43,8 @@ arduino-cli compile --fqbn arduino:avr:uno Radar
 mkdir test_distance_conversion
 mv tests/test_distance_conversion.ino test_distance_conversion/test_distance_conversion.ino
 arduino-cli compile --fqbn arduino:avr:uno test_distance_conversion
+
+# Compile and run host-based tests
+cd tests
+make run
+
