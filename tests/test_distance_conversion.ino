@@ -1,8 +1,13 @@
 #include <AUnit.h>
 
 // Declare the functions to test (from Radar.ino)
-int convertCm(long sensorPulse);
-int convertInch(int cm);
+int convertInch(int cm) {
+  return (cm / 2.54);
+}
+
+int convertCm(long sensorPulse) {
+  return (0.01723 * sensorPulse);
+}
 
 // Test convertCm function
 test(convertCmTests) {
