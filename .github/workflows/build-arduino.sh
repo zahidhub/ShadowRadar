@@ -26,6 +26,7 @@ if [ "$MODE" == "build-only" ]; then
 elif [ "$MODE" == "test-only" ]; then
   # Host-based test only: Skip Arduino CLI setup
   cd $GITHUB_WORKSPACE/tests
+  ls ../external/AUniter/src
   make run
 
 else
