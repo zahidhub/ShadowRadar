@@ -1,19 +1,23 @@
-# Simple Makefile to run AUnit tests on host system
-
 CXX = g++
 CXXFLAGS = -Wall -Wextra -std=gnu++17 -I../external/AUniter/src
 LDFLAGS =
 
-SRC = host_test.cpp
-TARGET = host_test
+# Automatically find all .cpp test files in this directory
+SRC := $(wildcard *.cpp)
+TARGETS := $(SRC:.cpp=)
 
-all: $(TARGET)
+all: $(TARGETS)
 
-$(TARGET): $(SRC)
-	$(CXX) $(CXXFLAGS) -o $(TARGET) $(SRC) $(LDFLAGS)
+# Compile each test file into its own executable
+%: %.cpp
+	$(CXX) $(CXXFLAGS) -o $@ $< $(LDFLAGS)
 
+# Run all test executables
 run: all
-	./$(TARGET)
+	@for target in $(TARGETS); do \
+		echo "Running $$target..."; \
+		./$$target; \
+	done
 
 clean:
-	rm -f $(TARGET)
+	rm -f $(TARGETS)
