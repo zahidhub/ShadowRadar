@@ -1,5 +1,6 @@
 CXX = g++
-CXXFLAGS = -Wall -Wextra -std=gnu++17 -I../external/AUniter/src
+CXXFLAGS = -Wall -Wextra -std=gnu++17 -Iexternal/AUniter/src
+
 LDFLAGS =
 
 # Automatically find all .cpp test files in this directory
