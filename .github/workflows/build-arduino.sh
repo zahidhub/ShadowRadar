@@ -28,6 +28,9 @@ arduino-cli core update-index
 # Install Arduino AVR core
 arduino-cli core install arduino:avr
 
+# Install AUnit library for unit testing
+arduino-cli lib install AUnit
+
 # Link Arduino library
 ln -s $GITHUB_WORKSPACE $HOME/Arduino/libraries/CI_Test_Library
 
